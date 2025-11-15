@@ -1,3 +1,7 @@
+// Time consuming synchronous file system operations block the event loop, 
+// preventing other operations from executing until the current one completes. 
+// This can lead to performance issues, especially in a server environment where multiple requests 
+// need to be handled concurrently.
 const { readFileSync, writeFileSync } = require('fs')
 console.log('start')
 const first = readFileSync('./content/first.txt', 'utf8')
